@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.Library", "ProjectIoC.Library\ProjectIoC.Library.csproj", "{A4455113-8CFD-4FE0-8188-7DF96EBEA680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{5308F19D-45FE-4252-9A83-D76367A5A4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Tests", "WebApp.Tests\WebApp.Tests.csproj", "{3E8613FC-FD24-41D6-8D09-63F93D514FFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.Datasource", "ProjectIoC.Datasource\ProjectIoC.Datasource.csproj", "{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.Datasource.Memory", "ProjectIoC.Datasource.Memory\ProjectIoC.Datasource.Memory.csproj", "{D812F7F0-2A65-4A11-85E3-821C4DD6A719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.Logger", "ProjectIoC.Logger\ProjectIoC.Logger.csproj", "{20B7527F-0E27-4ED2-B9A3-237A3013B303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.LoggerConsole", "ProjectIoC.LoggerConsole\ProjectIoC.LoggerConsole.csproj", "{32FE8E27-376A-4822-9334-AF811E730845}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4455113-8CFD-4FE0-8188-7DF96EBEA680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4455113-8CFD-4FE0-8188-7DF96EBEA680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4455113-8CFD-4FE0-8188-7DF96EBEA680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4455113-8CFD-4FE0-8188-7DF96EBEA680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5308F19D-45FE-4252-9A83-D76367A5A4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5308F19D-45FE-4252-9A83-D76367A5A4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5308F19D-45FE-4252-9A83-D76367A5A4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5308F19D-45FE-4252-9A83-D76367A5A4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8613FC-FD24-41D6-8D09-63F93D514FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8613FC-FD24-41D6-8D09-63F93D514FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8613FC-FD24-41D6-8D09-63F93D514FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8613FC-FD24-41D6-8D09-63F93D514FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D812F7F0-2A65-4A11-85E3-821C4DD6A719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D812F7F0-2A65-4A11-85E3-821C4DD6A719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D812F7F0-2A65-4A11-85E3-821C4DD6A719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D812F7F0-2A65-4A11-85E3-821C4DD6A719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20B7527F-0E27-4ED2-B9A3-237A3013B303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B7527F-0E27-4ED2-B9A3-237A3013B303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B7527F-0E27-4ED2-B9A3-237A3013B303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B7527F-0E27-4ED2-B9A3-237A3013B303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FE8E27-376A-4822-9334-AF811E730845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FE8E27-376A-4822-9334-AF811E730845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FE8E27-376A-4822-9334-AF811E730845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FE8E27-376A-4822-9334-AF811E730845}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
