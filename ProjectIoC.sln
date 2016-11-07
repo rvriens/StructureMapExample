@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.Logger", "Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIoC.LoggerConsole", "ProjectIoC.LoggerConsole\ProjectIoC.LoggerConsole.csproj", "{32FE8E27-376A-4822-9334-AF811E730845}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.IoC", "WebApp.IoCHttpModule\WebApp.IoC.csproj", "{B3E06206-EB9B-43C1-99F7-B2AAEF2C17C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{32FE8E27-376A-4822-9334-AF811E730845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32FE8E27-376A-4822-9334-AF811E730845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32FE8E27-376A-4822-9334-AF811E730845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E06206-EB9B-43C1-99F7-B2AAEF2C17C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E06206-EB9B-43C1-99F7-B2AAEF2C17C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E06206-EB9B-43C1-99F7-B2AAEF2C17C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E06206-EB9B-43C1-99F7-B2AAEF2C17C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

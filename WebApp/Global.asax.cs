@@ -31,14 +31,6 @@ namespace WebApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            StructureMap.Container container = new StructureMap.Container((r) =>
-            {
-                r.For<IOrderService>().Use<OrderService>();
-                r.For<ILogger>().Use<LoggerConsole>();
-                r.For<IDataSource>().Use<DatasourceMemory>().Singleton();
-            });
-            MyContainer = container;
-
         }
     }
 }

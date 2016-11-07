@@ -246,9 +246,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Order.aspx" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
@@ -420,6 +417,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -496,6 +496,10 @@
     <ProjectReference Include="..\ProjectIoC.Logger\ProjectIoC.Logger.csproj">
       <Project>{20B7527F-0E27-4ED2-B9A3-237A3013B303}</Project>
       <Name>ProjectIoC.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApp.IoCHttpModule\WebApp.IoC.csproj">
+      <Project>{b3e06206-eb9b-43c1-99f7-b2aaef2c17c3}</Project>
+      <Name>WebApp.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
