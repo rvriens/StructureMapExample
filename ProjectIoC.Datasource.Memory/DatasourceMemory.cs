@@ -38,7 +38,7 @@ namespace ProjectIoC.Datasource.Memory
 
         public IQueryable<T> DBSet<T>()
         {
-            _logger.Log(string.Format("Set {0}", typeof(T).Name));
+            _logger.Log(string.Format("Get {0}", typeof(T).Name));
             IList list = null;
             if (_models.ContainsKey(typeof(T)))
             {

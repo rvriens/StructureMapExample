@@ -25,6 +25,8 @@ namespace WebApp
 
         void Application_Start(object sender, EventArgs e)
         {
+            Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.DisableTelemetry = true;
+
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

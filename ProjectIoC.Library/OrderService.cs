@@ -1,4 +1,5 @@
 ﻿using ProjectIoC.Datasource;
+using ProjectIoC.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,14 @@ namespace ProjectIoC.Library
     public class OrderService : IOrderService
     {
         private IDataSource _datasource;
+        private IExternalOrderService _externalOrderService;
 
-        public OrderService(IDataSource datasource)
+        public OrderService(IDataSource datasource, IExternalOrderService service)
         {
             _datasource = datasource;
+            _externalOrderService = service;
+
+
         }
 
         public Order GetOrder()
@@ -24,7 +29,7 @@ namespace ProjectIoC.Library
 
         public int NumberOfOrders()
         {
-           return _datasource.DBSet<Order>().Count();
+           return _externalOrderService.IsAvailable() ? _datasource.DBSet<Order>().Count() : -1;
         }
 
         public void SaveOrder(Order order)

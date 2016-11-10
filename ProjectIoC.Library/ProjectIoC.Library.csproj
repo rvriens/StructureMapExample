@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IExternalOrderService.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="ExternalOrderService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,6 +51,10 @@
     <ProjectReference Include="..\ProjectIoC.Datasource\ProjectIoC.Datasource.csproj">
       <Project>{F64C3943-51F7-4F63-ACB2-DFD6D5DEDFC5}</Project>
       <Name>ProjectIoC.Datasource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectIoC.Logger\ProjectIoC.Logger.csproj">
+      <Project>{20B7527F-0E27-4ED2-B9A3-237A3013B303}</Project>
+      <Name>ProjectIoC.Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

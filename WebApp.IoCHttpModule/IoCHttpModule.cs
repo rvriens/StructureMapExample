@@ -25,9 +25,14 @@ namespace WebApp.IoC
             StructureMap.Container container = new StructureMap.Container((r) =>
             {
                 r.For<IOrderService>().Use<OrderService>();
-                r.For<ILogger>().Use<LoggerConsole>();
-                r.For<ProjectIoC.Datasource.IDataSource>().Use<DatasourceMemory>().Singleton();
-                r.Policies.FillAllPropertiesOfType<ILogger>().Use<LoggerConsole>();
+                r.For<IExternalOrderService>().Use<ExternalOrderService>();
+
+
+                // r.For<ProjectIoC.Datasource.IDataSource>().Use<DatasourceMemory>().Singleton().Ctor<ILogger>("logger").Is<LoggerConsole>();
+                r.For<ProjectIoC.Datasource.IDataSource>().Use<DatasourceMemory>().Singleton().Ctor<ILogger>("logger").Is<LoggerDebugTrace>(q => q.Ctor<string>("source").Is("datasource"));
+                r.Policies.FillAllPropertiesOfType<ILogger>().Use<LoggerDebugTrace>().Ctor<string>("source").Is("web").Named("Logger-web");
+                r.For<ILogger>().Use("Logger-web"); //Use<LoggerDebugTrace>().Ctor<string>("source").Is("default");
+                
             });
             MyContainer = container;
 
