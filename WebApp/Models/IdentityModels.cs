@@ -18,6 +18,9 @@ namespace WebApp.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+
+            userIdentity.AddClaim(new Claim("GoogleUserId", GoogleUserId));
+
             return userIdentity;
         }
 
@@ -25,6 +28,8 @@ namespace WebApp.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+
+        public string GoogleUserId { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

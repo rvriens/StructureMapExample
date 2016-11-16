@@ -8,6 +8,8 @@ using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using WebApp.Models;
+using Google.Apis.Auth.OAuth2.Responses;
+using System.Security.Claims;
 
 namespace WebApp
 {
@@ -64,6 +66,41 @@ namespace WebApp
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+
+            var googleOAuth2Options = new GoogleOAuth2AuthenticationOptions()
+            {
+                AccessType = "offline",     // Request a refresh token.
+                ClientId = GoogleSettings.ClientId,
+                ClientSecret = GoogleSettings.ClientSecret,
+                Provider = new Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider
+                {
+                    OnAuthenticated = async context =>
+                    {
+                        var userId = context.Id;
+                        context.Identity.AddClaim(new Claim("GoogleUserId", userId));
+
+                        var tokenResponse = new TokenResponse()
+                        {
+                            AccessToken = context.AccessToken,
+                            RefreshToken = context.RefreshToken,
+                            ExpiresInSeconds = (long)context.ExpiresIn.Value.TotalSeconds,
+                            Issued = DateTime.Now,
+                        };
+
+                        await dataStore.StoreAsync(userId, tokenResponse);
+                    },
+
+                }
+
+            };
+
+            foreach (string scope in GoogleSettings.Scopes)
+            {
+                googleOAuth2Options.Scope.Add(scope);
+            }
+
+            app.UseGoogleAuthentication(googleOAuth2Options);
         }
     }
 }

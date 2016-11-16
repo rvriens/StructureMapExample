@@ -5,6 +5,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using WebApp.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace WebApp.Account
 {
@@ -76,6 +78,7 @@ namespace WebApp.Account
                 else
                 {
                     email.Text = loginInfo.Email;
+                    Session.Add("GoogleUserId", loginInfo.Login.ProviderKey);
                 }
             }
         }        
@@ -93,7 +96,13 @@ namespace WebApp.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+
+
+          
+
+            string userId2 = (string)Session["GoogleUserId"];
+
+            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text, GoogleUserId = userId2 };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
